@@ -1,0 +1,75 @@
+<!doctype HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Ma page </title>
+    </head>
+    <body>
+        <form >
+            <p>
+                <label for="nom"> Votre Nom : </label><br>
+                <input type="text" id="nom" name="nom" pattern='^[A-Z]' required ><br>
+
+                <label for="prenom"> Votre Prénom : </label><br>
+                <input type="text" name="prenom" id="prenom"/>
+            </p>
+
+            <p>
+                <label for="pass"> Votre Mot de passe : </label><br>
+                <input type="text" name="pass" id="pass"/>
+            </p>
+
+            <p>
+                <label for="g"> <!--Etes ce que Guillaume est une pleureuse --> Oui non: </label><br>
+                <input type="radio" name="oui" id="oui" value="oui"/>
+                <label for="g"> Oui : </label>
+                <input type="radio" name="oui" id="oui" value="non"/>
+                <label for="g"> Non : </label>
+            </p>
+
+            <p>
+                <label for="commentaire"> Votre commentaire : </label><br>
+                <textarea id="commentaire" rows="10" cols="100"> </textarea>
+            </p>
+
+            <p>
+                <label for="jour">Choisir le jour :</label>
+                <select name="" id="jour">
+                    <option value="lundi">Lundi</option>
+                    <option value="mardi">Mardi</option>
+                    <option value="mercredi">Mercredi</option>
+                    <option value="jeudi">Jeudi</option>
+                    <option value="vendredi">Vendredi</option>
+                    <option value="samedi">Samedi</option>
+                    <option value="dimanche">Dimanche</option>
+                </select>
+            </p>
+            <fieldset>
+                <legend>Votre civilité :</legend>
+                <input type="radio" name="civilité" value="madame">Madame
+                <input type="radio" name="civilité" value="monsieur">Monsieur
+                <input type="radio" name="civilité" value="monsieur">Non Binaire
+                <input type="radio" name="civilité" value="monsieur">PD
+                <input type="radio" name="civilité" value="monsieur">PD non assumé
+                <p>(Pour l'église)</p>
+                <input type="radio" name="civilité" value="mon enfant">Mon enfant
+            </fieldset>
+            
+            <p>
+                <p>Choisir un ou plusieurs Jours :</p>
+                <input type="checkbox" name="lundi" >Lundi  
+                <input type="checkbox" name="mardi" >Mardi 
+                <input type="checkbox" name="mercredi" >Mercredi 
+                <input type="checkbox" name="jeudi" >Jeudi
+                <input type="checkbox" name="vendredi" >Vendredi 
+                <input type="checkbox" name="samedi" >Samedi 
+                <input type="checkbox" name="dimanche" >Dimanche              
+            </p>
+
+            <p>  <input type="submit"></p>
+
+
+        </form>
+
+    </body>
+</html>

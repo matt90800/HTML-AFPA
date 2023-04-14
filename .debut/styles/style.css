@@ -1,0 +1,31 @@
+.titre {
+    border: 5px solid blue;
+}
+.color {
+    color: blue;
+}
+
+.colored:hover {
+    background: green;
+}
+
+.colored:active {
+    background: #255af040;
+}
+
+#name {
+    background: green;
+}
+
+#age {
+    background: red;
+}
+
+
+.radiotype input:focus + label{
+     font-style: italic;
+}
+
+#reglement:checked + label {
+    background-color: gold;
+}

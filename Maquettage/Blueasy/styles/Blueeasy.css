@@ -1,0 +1,141 @@
+body{margin: 0;}
+section{
+    margin-bottom: 0;
+    padding-top: 5em ;
+    padding-bottom: 5em;
+}
+
+#navbar {
+    display: flex;
+justify-content: space-between;
+    padding-top: 3vw;
+    padding-bottom: 3VW;
+    height: 23px;
+}
+
+li{
+    display: inline-flex;
+    justify-self: auto;
+}
+
+
+#titles{
+    margin-top: 12%;
+}
+
+ header p{
+    background: rgba(57, 57, 57, 0.747);
+    font-size: 2vw;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-transform:uppercase ;
+    width: fit-content;
+ }
+
+header{
+    margin: 0;
+    background-image: url("../images/banniere.png");    
+    height: 40VW;
+}
+
+
+
+nav{
+    background-color: rgba(56, 58, 56, 0.897);
+    height: 15%;
+}
+
+nav a{
+    color: white  !important;
+}
+
+.service{
+    width: 24%;
+    display: inline-block;
+}
+
+section h2{
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.color1{
+    color: lightblue;
+}
+
+#portofolio p{
+    display: inline;
+    margin-left: 1em;
+}
+
+#portofolio .img{
+    display: flex; 
+        justify-content: space-around; 
+        flex-wrap: wrap; 
+        align-items: center;
+        gap: 20px;
+}
+
+.background1{
+    background-color: rgb(112, 160, 176);
+}
+
+#defautsection{
+    background-color: rgb(55,55,55);
+    color: white;
+}
+
+#defautsection a{
+    background-color: rgb(55,55,55);
+    display: inline-block;
+    color: gray;
+    border: solid;
+    margin: 1em;
+    padding: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+#johndoe{
+    background-image: url("../images/presentation.png");
+    color: white;
+}
+
+.johndiv{
+    display: flex;
+    flex-wrap: nowrap; 
+     justify-content: space-around; 
+}
+
+.testimonial img{
+    margin: auto ;
+    margin-top: 0;
+    margin-right: 0;
+}
+
+.testimonial>.container>div{
+    display: flex;
+    align-content: space-between;
+
+}
+
+form{
+    margin-bottom: 0;
+    padding-top:60px ;
+    padding-bottom: 60px;
+    color: white;
+    background-image: url("../images/contact.png");
+}
+
+
+
+footer{
+    background-color: rgb(55,55,55);
+    height: 100px;
+}
+
+footer a{
+    color: white;
+}

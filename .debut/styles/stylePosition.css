@@ -1,0 +1,24 @@
+/* .boite1 {
+    width: 200px;
+    height: 100px;
+    background: lightblue;
+    float: left;
+}
+
+.parent{
+    width: 250px;
+    height: 150px;
+    background: green;
+    float: left;  
+}
+
+.enfant{
+    width: 50%;
+    height: 50%;
+    background: aliceblue;
+    margin: 12.5% auto ;
+}
+
+#test{
+    clear:left;
+} */

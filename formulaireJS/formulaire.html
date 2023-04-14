@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+
+    <form class="row m-0" name="form" action="">
+        <h1 class="d-flex justify-content-center">Formulaire d'inscription</h1>
+        <div class="mb-3 col-6">
+            <label for="inputLastName" class="form-label ">LastName</label><br>
+            <input class="form-control" name="inputLastName" id="inputLastName" type="text">
+        </div>
+        <div class="mb-3 col-6">
+            <label for="" class="form-label">Birth Date</label><br>
+            <input class="form-control" placeholder="test" name="inputDate" id="inputDate" type="date" required>
+
+        </div>
+        <div class="mb-3 col-6">
+            <label for="inputFirstName" class="form-label">FirstName</label><br>
+            <input class="form-control" name="inputFirstName" id="inputFirstName" type="text">
+        </div>
+        <div class="mb-3 col-6">
+            <label for="" class="form-label">Status</label><br>
+            <select class="form-select" name="inputStatus" id="inputStatus" aria-label="Default select example">
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                <option value="3">What's the damn hell</option>
+              </select>        </div>
+        <div class="mb-3 col-6">
+            <label for="" class="form-label">Email</label><br>
+            <input class="form-control" name="inputEmail" id="inputEmail" type="email">
+        </div>
+        <div class="mb-3 col-6" class="form-check">
+            <br>
+            <input type="checkbox" name="inputCheckbox" id="inputCheckbox" class="form-label">
+            <label class="form-control d-inline" for="checkbox" id="inputCheckbox">I'm okay to get screwed</label>
+        </div>
+
+        <div class="mb-3 col-12">
+            <label for="" class="form-label min-wi">Message</label><br>
+            <textarea class="form-control" name="inputMessage" id="inputMessage" aria-label="Message"></textarea>        </div>
+
+        <input class="btn btn-primary d-flex justify-content-center offset-5 col-2" type="submit" name="" id="" disabled>
+    </form>
+    <script src="formulaire .js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
