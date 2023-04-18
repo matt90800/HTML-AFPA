@@ -2,23 +2,27 @@ const main = document.querySelector('main');
 let previousURL;
 
 const createCard = (element)=> {
-
-
     const article = document.createElement('article');
     article.style.backgroundColor='lightgrey'
+    const linkFill=(link,href)=>{
+        link.href=href
+        link.class="card-link";
+        link.innerText="Link to show";
+    }
 
     const link=document.createElement("a");
     link.id="link";
-    link.href="#"
-    link.class="card-link";
-    link.innerText="Link to show";
+    linkFill(link,"#");
+    
+    const officialLink=document.createElement("a");
+    officialLink.id="officialLink";
+    linkFill(officialLink,element.officialSite);
 
     //API 2
     if (element.show==undefined){
         article.className='card col-11 m-5';
         link.addEventListener("click",(e)=>{
             main.innerHTML = '';   
-            console.log(previousURL)
             fetchData(previousURL,false);
               //  main.append(createCard(element.currentPage,false)) 
         });
@@ -26,13 +30,12 @@ const createCard = (element)=> {
         element=element.show;
         article.className='card col-sm-12 col-md-6 col-lg-4';
 
-        link.addEventListener("click",(e)=>{
+        article.addEventListener("click",(e)=>{
             main.innerHTML = '';   
             const url = element._links.self.href
             fetch (url)
             .then(response => response.json())
             .then(json => {
-
                 main.append(createCard(json)) 
         });
         })
@@ -43,7 +46,7 @@ const createCard = (element)=> {
     article.innerHTML=`
             <img src=${element.image!=null?element.image.original:"placeholder-image.png"} class="card-img-top img-fluid" alt="Image not found">
             <div class="card-body">
-                <h5 class="card-title">${element.name}</h5>
+                <h4 class="card-title">${element.name}</h4>
                 <p class="card-text">${element.genres}</p>
             </div>
             <ul class="list-group list-group-flush">
@@ -58,42 +61,54 @@ const createCard = (element)=> {
 
     
     div.append(link);
+    div.append(officialLink);
 
 
         return article;
 }
 
-
+const log=(msg, value)=>{
+    console.log(msg +" : ");
+    console.log(value);
+    console.log();
+}
 //boolean to determine if the 1st parameter is a full path, or just a research value.
 const fetchData = (searchResult,boolean) => {
-    const url = boolean?`https://api.tvmaze.com/search/shows?q=${searchResult}`:searchResult
-    console.log("url : "+ url)
-    fetch (url)
-        .then(response => response.json())
-        .then(json => {
-            json.length>1 ?
-            json.forEach(
-                element => {
-                    previousURL=url;
-                    main.append(createCard(element))
-                }
-            ) :
-            main.append(createCard(json)) 
-    })
+    log("search result",searchResult)
+    if (searchResult!=""){
+        const url = boolean?`https://api.tvmaze.com/search/shows?q=${searchResult}`:searchResult
+        log("url",url)
+        fetch (url)
+            .then(response => response.json())
+            .then(json => {
+                console.log(json.length)
+                if (json.length>1) {
+                    main.innerHTML='';
+                    json.forEach(
+                    element => {
+                        previousURL=url;
+                        main.append(createCard(element))
+                    }
+                )
+            } else if(json.length==1)
+            main.innerHTML='';
+                main.append(createCard(json))
+    
+        })
+    }
 }
 
 const search = document.querySelector("#search");
+search.value=null;
 
-if(search.nodeValue==null) {
-    console.log(search.nodeValue)
+if(search.value=="") {
     fetchData('a',true);}
 
 
-["click", "keydown","input"].forEach(ev=>{
+["click","input"].forEach(ev=>{
     search.addEventListener(ev,(e)=> {
-    console.log(e)
-    console.log(search.value)
-    main.innerHTML = '';   
+/*         e.key==" "? console.error("space entered"):"";
+ */        search.value.trim()
     fetchData(search.value,true);
 })
     });
